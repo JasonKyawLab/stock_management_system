@@ -1,17 +1,15 @@
 # stock_management_system
-AI-Powered Stock Management System
+The AI-Powered Stock Management System is designed to help retail businesses manage product inventory more efficiently by combining traditional databases with AI-assisted similarity and recommendation logic.
 
-The AI-Powered Stock Management System is designed to help retail businesses manage product inventory more efficiently by combining traditional databases with AI-based similarity search.
+The system stores core stock data such as SKU, quantity, and price in PostgreSQL, which acts as the single source of truth. Product-related information such as name, description, category, and tags is stored in MongoDB to support flexible data structures and retrieval-based processing.
 
-The system stores core stock data such as SKU, quantity, and price in PostgreSQL, which acts as the single source of truth. Product-related information such as name, description, category, and tags is stored in MongoDB to support flexible data structures and AI processing.
+AI is integrated as a decision-support layer that analyzes existing inventory data and product information to generate insights and recommendations. The system follows a Retrieval-Augmented Generation (RAG) approach, where relevant product data is first retrieved from the databases and then provided as context to an AI model for reasoning.
 
-AI is integrated using a local embedding model (Ollama) to convert product descriptions into vector representations. These vectors allow the system to identify similar or substitute products based on meaning rather than exact keyword matches.
+When a product is low in stock or unavailable, the system can suggest alternative products that are semantically similar. This helps store staff respond quickly and consistently without manually searching through inventory.
 
-When a product is out of stock or low in quantity, the system can automatically suggest alternative products that are semantically similar. This helps store staff quickly assist customers without manually searching through inventory.
+The AI component is triggered only when it adds value, such as during low-stock situations or when similarity insights are requested. This design keeps the system cost-aware, efficient, and scalable.
 
-The AI component runs only when necessary, such as when products are created, updated, or when a similarity search is requested. This design minimizes server load and cost while still providing intelligent features.
-
-The system is modular, cost-aware, and scalable. It can be used by small retail shops as well as extended later for larger enterprises by replacing the local AI model with a managed AI service if needed.
+The architecture is modular and can be extended in the future by integrating vector embeddings or replacing the AI model with a managed service as the system grows.
 
 
 Project Structure

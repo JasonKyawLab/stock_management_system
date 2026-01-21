@@ -14,5 +14,5 @@ export const env = {
   },
   
   mongoUrl: process.env.MONGO_URL,
-  ollamaUrl: process.env.OLLAMA_URL
+  geminiApiKey: process.env.GEMINI_API_KEY
 };
